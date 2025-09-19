@@ -315,9 +315,7 @@ class SearchableDropdown<T> extends StatefulWidget {
     this.menuConstraints,
     this.readOnly = false,
     this.menuBackgroundColor,
-  })  : assert(items != null),
-        assert(iconSize != null),
-        assert(isExpanded != null),
+  })  : assert(iconSize != null),
         assert(!multipleSelection || doneButton != null),
         assert(menuConstraints == null || !dialogBox!),
         super(key: key);
@@ -355,9 +353,7 @@ class SearchableDropdown<T> extends StatefulWidget {
     this.menuConstraints,
     this.readOnly = false,
     this.menuBackgroundColor,
-  })  : assert(items != null),
-        assert(iconSize != null),
-        assert(isExpanded != null),
+  })  : assert(iconSize != null),
         assert(!multipleSelection || doneButton != null),
         assert(menuConstraints == null || !dialogBox!),
         super(key: key);
@@ -379,7 +375,6 @@ class _SearchableDropdownState<T> extends State<SearchableDropdown<T?>> {
               .titleMedium!
               .copyWith(color: _disabledIconColor));
   bool get _enabled =>
-      widget.items != null &&
       widget.items.isNotEmpty &&
       widget.onChanged != null;
 
@@ -433,7 +428,7 @@ class _SearchableDropdownState<T> extends State<SearchableDropdown<T?>> {
     return (widget.multipleSelection
         ? selectedItems
         : selectedItems?.isNotEmpty ?? false
-            ? widget.items[selectedItems!.first]?.value
+            ? widget.items[selectedItems!.first].value
             : null);
   }
 
@@ -718,8 +713,7 @@ class DropdownDialog<T> extends StatefulWidget {
     this.menuConstraints,
     this.callOnPop,
     this.menuBackgroundColor,
-  })  : assert(items != null),
-        super(key: key);
+  })  : super(key: key);
 
   _DropdownDialogState<T> createState() => new _DropdownDialogState<T>();
 }
@@ -737,7 +731,7 @@ class _DropdownDialogState<T> extends State<DropdownDialog> {
     return (widget.multipleSelection!
         ? widget.selectedItems
         : widget.selectedItems?.isNotEmpty ?? false
-            ? widget.items[widget.selectedItems!.first]?.value
+            ? widget.items[widget.selectedItems!.first].value
             : null);
   }
 
