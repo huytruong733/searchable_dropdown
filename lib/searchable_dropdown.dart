@@ -315,8 +315,7 @@ class SearchableDropdown<T> extends StatefulWidget {
     this.menuConstraints,
     this.readOnly = false,
     this.menuBackgroundColor,
-  })  : assert(iconSize != null),
-        assert(!multipleSelection || doneButton != null),
+  })  : assert(!multipleSelection || doneButton != null),
         assert(menuConstraints == null || !dialogBox!),
         super(key: key);
 
@@ -353,8 +352,7 @@ class SearchableDropdown<T> extends StatefulWidget {
     this.menuConstraints,
     this.readOnly = false,
     this.menuBackgroundColor,
-  })  : assert(iconSize != null),
-        assert(!multipleSelection || doneButton != null),
+  })  : assert(!multipleSelection || doneButton != null),
         assert(menuConstraints == null || !dialogBox!),
         super(key: key);
 
